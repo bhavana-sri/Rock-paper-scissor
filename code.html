@@ -1,0 +1,76 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include<string.h>
+
+void game(char p[10],char c[10])
+{
+    if(strcmp(p,"Rock")==0&&strcmp(c,"paper")==0)
+    {
+        printf("\nresult: computer won");
+    }
+    else if(strcmp(p,"paper")==0&&strcmp(c,"scissor")==0)
+    {
+        printf("\nresult: player won");
+    }
+    else if(strcmp(p,"scissor")==0&&strcmp(c,"paper")==0)
+    {
+        printf("\nresult: player won");
+    }
+    else if(strcmp(p,"scissor")==0&&strcmp(c,"Rock")==0)
+    {
+        printf("\nresult: computer won");
+    }
+    else if(strcmp(p,"paper")==0&&strcmp(c,"Rock")==0)
+    {
+        printf("\nresult: computer won");
+    }
+    else if(strcmp(p,"Rock")==0&&strcmp(c,"scissor")==0)
+    {
+        printf("\nresult: computer won");
+    }
+    else if(strcmp(p,c)==0)
+    {
+        printf("\nresult: game tie");
+    }
+    else if(p=="quit")
+    {
+        exit(0);
+    }
+    else
+    {
+                exit(0);
+    }
+}
+
+int main()
+{
+    //srand();
+    char p[10];
+    char c[10];
+    int n;
+    printf("please choose Rock,paper,scissor or quit:");
+    scanf("%s",&p);
+    printf("\nplayer choose:%s",p);
+    n=rand()%100;
+    if(n<33)
+    {
+        char c[10]="scissors";
+        printf("\ncomputer chooce:%s",c);
+        game(p,c);
+    }
+    else if(n>33&&n<66)
+    {
+       char c[10]="paper";
+        printf("\ncomputer chooce:%s",c);
+        game(p,c);
+    }
+    else
+    {
+        char c[10]="Rock";
+        printf("\ncomputer chooce:%s",c);
+        game(p,c);
+    }
+    game(p,c);
+}
